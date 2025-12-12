@@ -1,0 +1,21 @@
+.pdf-viewer-root { width: 100%; }
+.pdf-loading, .pdf-error { padding: 12px 20px; color: #0b2540; }
+.pdf-viewer-container {
+  width: 100%;
+  overflow: visible; /* allow the page to scroll the whole document */
+  background: #f7fbff;
+  box-sizing: border-box;
+  padding: 10px 20px;
+}
+.pdf-page {
+  display: flex;
+  justify-content: center;
+  padding: 18px 0;
+}
+.pdf-page canvas { box-shadow: 0 6px 18px rgba(11,37,60,0.06); border-radius: 4px; max-width: 100%; height: auto; }
+
+/* smaller screens: reduce padding */
+@media (max-width: 600px) {
+  .pdf-viewer-container { padding: 8px; }
+  .pdf-page { padding: 12px 0; }
+}
