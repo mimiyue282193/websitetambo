@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { User, AuditLog } from '@/types';
-import { authService, auditService, progressService } from '@/services/api';
+import { authService, auditService } from '@/services/api';
 import './Dashboard.css';
 
 const OMODashboard: React.FC = () => {

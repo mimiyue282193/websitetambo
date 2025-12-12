@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { ChatMessage, DirectMessage } from '@/types';
+import React, { useState } from 'react';
+import { ChatMessage } from '@/types';
 import { communicationService, conferenceService } from '@/services/api';
 import './Communication.css';
 
@@ -7,7 +7,6 @@ const CommunicationHub: React.FC<{ classId: string; userId: string }> = ({ class
   const [activeTab, setActiveTab] = useState<'chat' | 'forum' | 'conference'>('chat');
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
   const [newMessage, setNewMessage] = useState('');
-  const [directMessages, setDirectMessages] = useState<DirectMessage[]>([]);
   const [conferenceUrl, setConferenceUrl] = useState<string>('');
 
   const handleSendChat = async (e: React.FormEvent) => {
