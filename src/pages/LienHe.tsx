@@ -4,7 +4,6 @@ import "@/pages/LienHe.css";
 const LienHe: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
     phone: "",
     subject: "",
     message: "",
@@ -22,7 +21,7 @@ const LienHe: React.FC = () => {
     e.preventDefault();
     console.log("Form submitted:", formData);
     alert("Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất.");
-    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+    setFormData({ name: "", phone: "", subject: "", message: "" });
   };
 
   return (
@@ -55,16 +54,6 @@ const LienHe: React.FC = () => {
             </div>
 
             <div className="info-box">
-              <div className="info-icon">✉️</div>
-              <div className="info-details">
-                <h3>Email</h3>
-                <p>
-                  <a href="mailto:admin@vietinnotech.vn">admin@vietinnotech.vn</a>
-                </p>
-              </div>
-            </div>
-
-            <div className="info-box">
               <div className="info-icon">🕐</div>
               <div className="info-details">
                 <h3>Giờ Làm Việc</h3>
@@ -90,31 +79,16 @@ const LienHe: React.FC = () => {
               />
             </div>
 
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="email">Email *</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  placeholder="Nhập email của bạn"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="phone">Điện Thoại</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  placeholder="Nhập số điện thoại"
-                />
-              </div>
+            <div className="form-group">
+              <label htmlFor="phone">Điện Thoại</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="Nhập số điện thoại"
+              />
             </div>
 
             <div className="form-group">

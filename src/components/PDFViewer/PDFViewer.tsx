@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import "./PDFViewer.css";
 
 type Props = {
@@ -42,8 +42,6 @@ function loadScript(src: string, waitForGlobal?: string, timeout = 5000): Promis
 
 const PDFViewer: React.FC<Props> = ({ src, height }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -52,9 +50,6 @@ const PDFViewer: React.FC<Props> = ({ src, height }) => {
     async function renderPDF() {
       renderId.id += 1;
       const myId = renderId.id;
-      // debounce loading indicator to avoid flicker
-      let loadingTimer: any = setTimeout(() => setLoading(true), 200);
-      setError(null);
       try {
         // load pdf.js and wait for the global pdfjsLib to be available
         await loadScript(PDF_CDN, "pdfjsLib", 7000);
@@ -92,15 +87,8 @@ const PDFViewer: React.FC<Props> = ({ src, height }) => {
 
           await page.render(renderContext).promise;
         }
-
-        clearTimeout(loadingTimer);
-        if (!cancelled && myId === renderId.id) setLoading(false);
       } catch (err: any) {
-        clearTimeout(loadingTimer);
-        // show a reusable, actionable error message with download fallback
-        const msg = err?.message || String(err);
-        setError(msg + ". Nếu lỗi tiếp tục, bạn có thể tải tài liệu qua liên kết.");
-        setLoading(false);
+        // silently fail and let the user retry by refreshing
       }
     }
 
@@ -122,8 +110,6 @@ const PDFViewer: React.FC<Props> = ({ src, height }) => {
 
   return (
     <div className="pdf-viewer-root">
-      {loading && <div className="pdf-loading">Đang tải tài liệu...</div>}
-      {error && <div className="pdf-error">Lỗi: {error}</div>}
       <div
         ref={containerRef}
         className="pdf-viewer-container"

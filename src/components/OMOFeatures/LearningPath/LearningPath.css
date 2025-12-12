@@ -1,0 +1,214 @@
+.learning-path-manager {
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.lp-header {
+  margin-bottom: 30px;
+}
+
+.lp-header h2 {
+  font-size: 24px;
+  color: #6033ff;
+  margin-bottom: 5px;
+}
+
+.lp-header p {
+  color: #666;
+  font-size: 14px;
+}
+
+.lp-sequence {
+  background: #f0f4ff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.lp-sequence h3 {
+  margin-top: 0;
+  color: #6033ff;
+  margin-bottom: 20px;
+}
+
+.lp-flow {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.lp-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.lp-stage-icon {
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+.lp-stage-name {
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.lp-stage-desc {
+  color: #999;
+  font-size: 12px;
+  margin: 0;
+}
+
+.lp-arrow {
+  font-size: 24px;
+  color: #6033ff;
+  font-weight: bold;
+  margin: 0 5px;
+}
+
+.lp-materials {
+  margin-bottom: 30px;
+}
+
+.lp-materials h3 {
+  font-size: 18px;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+}
+
+.lp-materials-list {
+  display: grid;
+  gap: 15px;
+}
+
+.lp-material-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #6033ff;
+  transition: all 0.3s ease;
+}
+
+.lp-material-card:hover {
+  box-shadow: 0 4px 12px rgba(96, 51, 255, 0.15);
+}
+
+.lp-material-number {
+  background: #6033ff;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.lp-material-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.lp-material-content {
+  flex: 1;
+}
+
+.lp-material-content h4 {
+  margin: 0 0 5px 0;
+  color: #1a1a1a;
+  font-size: 15px;
+}
+
+.lp-material-type {
+  display: inline-block;
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.lp-material-criteria,
+.lp-material-prereq {
+  margin: 0;
+  font-size: 12px;
+  color: #666;
+}
+
+.lp-material-prereq {
+  color: #ff9800;
+}
+
+.lp-material-btn {
+  background: linear-gradient(135deg, #02a3ff 0%, #6033ff 100%);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.lp-material-btn:hover {
+  transform: scale(1.05);
+}
+
+.lp-features {
+  background: #fff3e0;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.lp-features h3 {
+  margin-top: 0;
+  color: #f57c00;
+  margin-bottom: 15px;
+}
+
+.lp-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.lp-feature {
+  background: white;
+  padding: 15px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.lp-feature-icon {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.lp-feature h4 {
+  margin: 0 0 8px 0;
+  color: #1a1a1a;
+  font-size: 14px;
+}
+
+.lp-feature p {
+  margin: 0;
+  font-size: 12px;
+  color: #666;
+  line-height: 1.5;
+}

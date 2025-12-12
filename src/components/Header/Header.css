@@ -118,6 +118,7 @@
   width: 26px;
   height: 26px;
   cursor: pointer;
+  color: black;
 }
 .hamb-icon:hover {
   color: #0cc2ea;

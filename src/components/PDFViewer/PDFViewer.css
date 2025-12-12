@@ -1,5 +1,5 @@
 .pdf-viewer-root { width: 100%; }
-.pdf-loading, .pdf-error { padding: 12px 20px; color: #0b2540; }
+
 .pdf-viewer-container {
   width: 100%;
   overflow: visible; /* allow the page to scroll the whole document */

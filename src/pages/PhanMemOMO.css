@@ -198,45 +198,165 @@
 }
 
 /* CTA Section */
-.pmo-cta {
-  text-align: center;
-  background: linear-gradient(135deg, #6033ff 0%, #02a3ff 100%);
-  color: white;
-  padding: 50px 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(96, 51, 255, 0.2);
-}
-
-.pmo-cta h2 {
-  font-size: 28px;
-  margin-bottom: 15px;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-}
-
-.pmo-cta p {
-  font-size: 16px;
+.pmo-nav-tabs {
+  display: flex;
+  gap: 10px;
   margin-bottom: 30px;
-  font-family: "Rubik", sans-serif;
-  opacity: 0.95;
+  border-bottom: 2px solid #eee;
+  overflow-x: auto;
 }
 
-.cta-btn {
-  display: inline-block;
-  padding: 14px 40px;
-  background: white;
-  color: #6033ff;
-  text-decoration: none;
-  border-radius: 8px;
+.pmo-tab {
+  padding: 14px 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
   font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: #999;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
-.cta-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+.pmo-tab.active {
+  color: #6033ff;
+  border-bottom-color: #6033ff;
+}
+
+.pmo-tab:hover {
+  color: #6033ff;
+}
+
+.pmo-subtitle-2 {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.pmo-overview,
+.pmo-features,
+.pmo-demo,
+.pmo-dashboard {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.overview-content {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.overview-content h2 {
+  font-size: 28px;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.overview-content p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.8;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.overview-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.overview-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(96, 51, 255, 0.15);
+}
+
+.card-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.overview-card h3 {
+  font-size: 18px;
+  color: #6033ff;
+  margin: 15px 0;
+  font-weight: 600;
+}
+
+.overview-card p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.col-title {
+  width: 25%;
+  font-weight: 600;
+  color: #6033ff;
+}
+
+.module-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.module-card {
+  background: linear-gradient(135deg, #f0f4ff 0%, #fff0f4 100%);
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #6033ff;
+}
+
+.module-card h3 {
+  margin: 0 0 8px 0;
+  color: #6033ff;
+  font-size: 15px;
+}
+
+.module-card p {
+  margin: 0;
+  color: #666;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.demo-sections {
+  display: grid;
+  gap: 30px;
+}
+
+.demo-sections h3 {
+  font-size: 20px;
+  color: #1a1a1a;
+  margin: 20px 0;
+  font-weight: 600;
+}
+
+.pmo-dashboard {
+  display: grid;
+  gap: 30px;
 }
 
 /* Responsive */
@@ -249,14 +369,26 @@
     font-size: 14px;
   }
 
-  .pmo-intro,
+  .pmo-subtitle-2 {
+    font-size: 12px;
+  }
+
+  .pmo-nav-tabs {
+    gap: 5px;
+  }
+
+  .pmo-tab {
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+
+  .overview-content,
   .pmo-features {
     padding: 24px;
   }
 
-  .pmo-features h2,
-  .pmo-download h2,
-  .pmo-cta h2 {
+  .overview-content h2,
+  .pmo-features h2 {
     font-size: 22px;
   }
 
@@ -266,22 +398,12 @@
     font-size: 12px;
   }
 
-  .download-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 30px 20px;
+  .overview-grid,
+  .module-selector {
+    grid-template-columns: 1fr;
   }
 
-  .download-btn {
-    margin-top: 10px;
-    display: block;
-  }
-
-  .pmo-cta {
-    padding: 30px 20px;
-  }
-
-  .cta-btn {
-    display: block;
+  .col-title {
+    width: auto;
   }
 }
