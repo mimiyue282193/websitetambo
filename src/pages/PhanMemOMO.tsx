@@ -332,12 +332,6 @@ const PhanMemOMO: React.FC = () => {
           <h2>Danh Sách 18 Tính Năng</h2>
             <div className="features-table-wrapper">
               <table className="features-table">
-                <thead>
-                  <tr>
-                    <th className="col-stt">STT</th>
-                    <th className="col-feature">TÍNH NĂNG</th>
-                  </tr>
-                </thead>
                 <tbody>
                   {features.map((item) => (
                     <tr key={item.stt}>
